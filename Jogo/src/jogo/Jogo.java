@@ -8,7 +8,11 @@ import Template.MododeAtirar;
 
 public class Jogo {
     public static void main(String[] args) {
-        
+        //strategy
+        Arma a = new Arma();
+
+        a.setArma(new Ak47());
+        a.armaSelecionada();
 
         //template
         MododeAtirar b = new Automatico();
