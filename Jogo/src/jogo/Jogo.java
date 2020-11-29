@@ -2,9 +2,15 @@ package jogo;
 
 import Factory.FactoryMethod;
 import Factory.SexoPersonagem;
+import Strategy.Ak47;
+import Strategy.Arma;
 import Template.Automatico;
-import Template.SemiAutomatico;
 import Template.MododeAtirar;
+import Observer.Observador;
+import Observer.Body;
+import Observer.Headshot;
+import Observer.LocalTiro;
+import Singleton.Personagem;
 
 public class Jogo {
     public static void main(String[] args) {
@@ -23,6 +29,18 @@ public class Jogo {
         FactoryMethod f = new FactoryMethod();
         SexoPersonagem s = f.tipoPersonagem("Masculino");
         s.criarPersonagem();
+        
+        //Obserrver
+        LocalTiro local = new LocalTiro();
+        local.addObservador(new Body());
+        local.addObservador(new Body());
+        local.setLocalTiro("HeadShot");
+        
+        //Singleton/Facade
+        Personagem p1 = Personagem.getInstance();
+        
+
+        
         
         
         
