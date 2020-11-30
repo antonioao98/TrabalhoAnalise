@@ -10,6 +10,9 @@ import Observer.Observador;
 import Observer.Body;
 import Observer.Headshot;
 import Observer.LocalTiro;
+import Proxy.DoubleXP;
+import Proxy.ObtencaoXP;
+import Proxy.SimplesXP;
 import Singleton.Personagem;
 
 public class Jogo {
@@ -39,7 +42,12 @@ public class Jogo {
         //Singleton/Facade
         Personagem p1 = Personagem.getInstance();
         
-
+        //Proxy
+        
+        ObtencaoXP simXP = new SimplesXP();
+        ObtencaoXP dbXP = new DoubleXP();
+        simXP.obterXP();
+        dbXP.obterXP();
         
         
         
